@@ -5,233 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="LucentX Support — Help, FAQ, and contact for the screen fill light app.">
   <title>LucentX — Support</title>
-  <style>
-    :root {
-      --bg: #0a0a0c;
-      --surface: #141418;
-      --border: rgba(255, 255, 255, 0.08);
-      --text: rgba(255, 255, 255, 0.92);
-      --muted: rgba(255, 255, 255, 0.55);
-      --accent: #ff9e3d;
-      --accent-soft: rgba(255, 158, 61, 0.15);
-      --radius: 16px;
-      --max: 720px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      min-height: 100vh;
-      padding: 24px 20px 48px;
-    }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-
-    header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #ff9e3d, #ff5e4d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 20px rgba(255, 158, 61, 0.25);
-    }
-
-    .logo svg {
-      width: 26px;
-      height: 26px;
-      fill: #fff;
-    }
-
-    .brand h1 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .brand p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    .lang-switch {
-      display: flex;
-      gap: 4px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 4px;
-    }
-
-    .lang-btn {
-      border: 0;
-      background: transparent;
-      color: var(--muted);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .lang-btn:hover { color: var(--text); }
-    .lang-btn.active {
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-
-    .hero {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      margin-bottom: 20px;
-    }
-
-    .hero h2 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 0.9375rem;
-    }
-
-    .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    .contact-card h2 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      font-size: 0.9375rem;
-      margin-bottom: 16px;
-    }
-
-    .email-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9375rem;
-      padding: 10px 16px;
-      background: var(--accent-soft);
-      border-radius: 10px;
-      transition: opacity 0.2s;
-    }
-
-    .email-link:hover { opacity: 0.85; }
-
-    .email-link svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    section h2 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .faq-item {
-      border-top: 1px solid var(--border);
-      padding: 16px 0;
-    }
-
-    .faq-item:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .faq-item:last-child { padding-bottom: 0; }
-
-    .faq-item h3 {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .faq-item p {
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.8125rem;
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    footer a {
-      color: var(--muted);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    [data-lang] { display: none; }
-    [data-lang].visible { display: block; }
-    header [data-lang].visible { display: flex; }
-    .lang-switch [data-lang].visible { display: flex; }
-  </style>
+  <link rel="stylesheet" href="common.css">
 </head>
 <body>
   <div class="wrap">
@@ -256,6 +30,21 @@
       </nav>
     </header>
 
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html" class="active visible" data-lang="en">Support</a>
+      <a href="index.html" class="active" data-lang="zh">技术支持</a>
+      <a href="index.html" class="active" data-lang="de">Support</a>
+      <a href="index.html" class="active" data-lang="fr">Support</a>
+      <a href="privacy.html" data-lang="en" class="visible">Privacy</a>
+      <a href="privacy.html" data-lang="zh">隐私政策</a>
+      <a href="privacy.html" data-lang="de">Datenschutz</a>
+      <a href="privacy.html" data-lang="fr">Confidentialité</a>
+      <a href="terms.html" data-lang="en" class="visible">Terms</a>
+      <a href="terms.html" data-lang="zh">用户协议</a>
+      <a href="terms.html" data-lang="de">Nutzungsbedingungen</a>
+      <a href="terms.html" data-lang="fr">Conditions</a>
+    </nav>
+
     <!-- English -->
     <div data-lang="en" class="visible">
       <div class="hero">
@@ -265,7 +54,7 @@
       <div class="contact-card">
         <h2>Contact Us</h2>
         <p>For questions, feedback, or bug reports, please email us. We typically respond within 1–2 business days.</p>
-        <a class="email-link" href="mailto:support@lucentx.app">
+        <a class="email-link" href="mailto:distaner@icloud.com">
           <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           distaner@icloud.com
         </a>
@@ -290,7 +79,7 @@
         </div>
         <div class="faq-item">
           <h3>Does the app collect my data?</h3>
-          <p>No. LucentX works entirely on your device. We do not collect personal data or require an account.</p>
+          <p>No. LucentX works entirely on your device. We do not collect personal data or require an account. See our <a href="privacy.html">Privacy Policy</a>.</p>
         </div>
       </section>
     </div>
@@ -304,7 +93,7 @@
       <div class="contact-card">
         <h2>联系我们</h2>
         <p>如有疑问、建议或 Bug 反馈，请发送邮件。我们通常会在 1–2 个工作日内回复。</p>
-        <a class="email-link" href="mailto:support@lucentx.app">
+        <a class="email-link" href="mailto:distaner@icloud.com">
           <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           distaner@icloud.com
         </a>
@@ -329,7 +118,7 @@
         </div>
         <div class="faq-item">
           <h3>应用会收集我的数据吗？</h3>
-          <p>不会。LucentX 完全在本地运行，不收集个人数据，也无需注册账号。</p>
+          <p>不会。LucentX 完全在本地运行，不收集个人数据，也无需注册账号。详见<a href="privacy.html">隐私政策</a>。</p>
         </div>
       </section>
     </div>
@@ -343,7 +132,7 @@
       <div class="contact-card">
         <h2>Kontakt</h2>
         <p>Bei Fragen, Feedback oder Fehlermeldungen schreiben Sie uns per E-Mail. Wir antworten in der Regel innerhalb von 1–2 Werktagen.</p>
-        <a class="email-link" href="mailto:support@lucentx.app">
+        <a class="email-link" href="mailto:distaner@icloud.com">
           <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           distaner@icloud.com
         </a>
@@ -368,7 +157,7 @@
         </div>
         <div class="faq-item">
           <h3>Sammelt die App meine Daten?</h3>
-          <p>Nein. LucentX funktioniert vollständig auf Ihrem Gerät. Es werden keine personenbezogenen Daten erhoben.</p>
+          <p>Nein. LucentX funktioniert vollständig auf Ihrem Gerät. Siehe unsere <a href="privacy.html">Datenschutzrichtlinie</a>.</p>
         </div>
       </section>
     </div>
@@ -382,7 +171,7 @@
       <div class="contact-card">
         <h2>Nous contacter</h2>
         <p>Pour toute question, suggestion ou signalement de bug, envoyez-nous un e-mail. Nous répondons généralement sous 1 à 2 jours ouvrés.</p>
-        <a class="email-link" href="mailto:support@lucentx.app">
+        <a class="email-link" href="mailto:distaner@icloud.com">
           <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           distaner@icloud.com
         </a>
@@ -407,51 +196,38 @@
         </div>
         <div class="faq-item">
           <h3>L'application collecte-t-elle mes données ?</h3>
-          <p>Non. LucentX fonctionne entièrement sur votre appareil, sans collecte de données personnelles ni compte requis.</p>
+          <p>Non. LucentX fonctionne entièrement sur votre appareil. Consultez notre <a href="privacy.html">politique de confidentialité</a>.</p>
         </div>
       </section>
     </div>
 
     <footer>
+      <div class="footer-links visible" data-lang="en">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <div class="footer-links" data-lang="zh">
+        <a href="index.html">技术支持</a>
+        <a href="privacy.html">隐私政策</a>
+        <a href="terms.html">用户协议</a>
+      </div>
+      <div class="footer-links" data-lang="de">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Datenschutz</a>
+        <a href="terms.html">Nutzungsbedingungen</a>
+      </div>
+      <div class="footer-links" data-lang="fr">
+        <a href="index.html">Support</a>
+        <a href="privacy.html">Confidentialité</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+      </div>
       <p data-lang="en" class="visible">&copy; 2026 LucentX. All rights reserved.</p>
       <p data-lang="zh">&copy; 2026 LucentX. 保留所有权利。</p>
       <p data-lang="de">&copy; 2026 LucentX. Alle Rechte vorbehalten.</p>
       <p data-lang="fr">&copy; 2026 LucentX. Tous droits réservés.</p>
     </footer>
   </div>
-
-  <script>
-    (function () {
-      var LANGS = ['en', 'zh', 'de', 'fr'];
-      var STORAGE_KEY = 'lucentx-support-lang';
-
-      function setLang(lang) {
-        if (LANGS.indexOf(lang) === -1) lang = 'en';
-        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
-        document.querySelectorAll('[data-lang]').forEach(function (el) {
-          el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
-        });
-        document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
-          btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
-        });
-        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-      }
-
-      document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          setLang(btn.getAttribute('data-set-lang'));
-        });
-      });
-
-      var saved = null;
-      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-      if (saved && LANGS.indexOf(saved) !== -1) {
-        setLang(saved);
-      } else {
-        var browser = (navigator.language || 'en').slice(0, 2);
-        setLang(LANGS.indexOf(browser) !== -1 ? browser : 'en');
-      }
-    })();
-  </script>
+  <script src="common.js"></script>
 </body>
 </html>
