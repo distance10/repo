@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LucentX Support — Help, FAQ, and contact for the screen fill light app.">
+  <title>LucentX — Support</title>
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --surface: #141418;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.55);
+      --accent: #ff9e3d;
+      --accent-soft: rgba(255, 158, 61, 0.15);
+      --radius: 16px;
+      --max: 720px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 24px 20px 48px;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff9e3d, #ff5e4d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(255, 158, 61, 0.25);
+    }
+
+    .logo svg {
+      width: 26px;
+      height: 26px;
+      fill: #fff;
+    }
+
+    .brand h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px;
+    }
+
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-btn:hover { color: var(--text); }
+    .lang-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      margin-bottom: 16px;
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 10px 16px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      transition: opacity 0.2s;
+    }
+
+    .email-link:hover { opacity: 0.85; }
+
+    .email-link svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    section h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .faq-item:last-child { padding-bottom: 0; }
+
+    .faq-item h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8125rem;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+    header [data-lang].visible { display: flex; }
+    .lang-switch [data-lang].visible { display: flex; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <div>
+          <h1>LucentX</h1>
+          <p data-lang="en" class="visible">Screen Fill Light</p>
+          <p data-lang="zh">屏幕补光灯</p>
+          <p data-lang="de">Bildschirm-Fülllicht</p>
+          <p data-lang="fr">Lumière d'appoint écran</p>
+        </div>
+      </div>
+      <nav class="lang-switch" aria-label="Language">
+        <button class="lang-btn active" data-set-lang="en">EN</button>
+        <button class="lang-btn" data-set-lang="zh">中文</button>
+        <button class="lang-btn" data-set-lang="de">DE</button>
+        <button class="lang-btn" data-set-lang="fr">FR</button>
+      </nav>
+    </header>
+
+    <!-- English -->
+    <div data-lang="en" class="visible">
+      <div class="hero">
+        <h2>Welcome to LucentX Support</h2>
+        <p>Turn your iPhone or iPad into a professional fill light for photography, video calls, makeup, and live streaming. Need help? We're here for you.</p>
+      </div>
+      <div class="contact-card">
+        <h2>Contact Us</h2>
+        <p>For questions, feedback, or bug reports, please email us. We typically respond within 1–2 business days.</p>
+        <a class="email-link" href="mailto:support@lucentx.app">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          distaner@icloud.com
+        </a>
+      </div>
+      <section>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>How do I change the light color?</h3>
+          <p>Tap the screen once to open the control panel. Use the sliders, quick color dots, or drag on the screen (horizontal = hue, vertical = brightness).</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I use gradient mode?</h3>
+          <p>Open the panel and switch to "Gradient". Choose a preset or edit color stops by tapping the gradient bar.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I lock the color?</h3>
+          <p>Double-tap the screen to lock. Double-tap again or tap the lock icon to unlock.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why does my screen brightness change?</h3>
+          <p>LucentX can automatically boost brightness to maximum for better lighting. You can toggle this with the sun icon in the panel.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does the app collect my data?</h3>
+          <p>No. LucentX works entirely on your device. We do not collect personal data or require an account.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Chinese -->
+    <div data-lang="zh">
+      <div class="hero">
+        <h2>欢迎使用 LucentX 技术支持</h2>
+        <p>将 iPhone 或 iPad 变成专业补光灯，适用于拍照、视频通话、化妆和直播。如有问题，欢迎联系我们。</p>
+      </div>
+      <div class="contact-card">
+        <h2>联系我们</h2>
+        <p>如有疑问、建议或 Bug 反馈，请发送邮件。我们通常会在 1–2 个工作日内回复。</p>
+        <a class="email-link" href="mailto:support@lucentx.app">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          distaner@icloud.com
+        </a>
+      </div>
+      <section>
+        <h2>常见问题</h2>
+        <div class="faq-item">
+          <h3>如何更改灯光颜色？</h3>
+          <p>单击屏幕打开控制面板。使用滑杆、快速取色，或在屏幕上拖动（左右 = 色相，上下 = 亮度）。</p>
+        </div>
+        <div class="faq-item">
+          <h3>如何使用渐变模式？</h3>
+          <p>打开面板后切换到「渐变」，选择预设或点击渐变条编辑色标。</p>
+        </div>
+        <div class="faq-item">
+          <h3>如何锁定颜色？</h3>
+          <p>双击屏幕锁定，再次双击或点击锁图标解锁。</p>
+        </div>
+        <div class="faq-item">
+          <h3>为什么屏幕亮度会变化？</h3>
+          <p>为获得更好补光效果，LucentX 可自动将亮度提到最高。可在面板右上角太阳图标处关闭。</p>
+        </div>
+        <div class="faq-item">
+          <h3>应用会收集我的数据吗？</h3>
+          <p>不会。LucentX 完全在本地运行，不收集个人数据，也无需注册账号。</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- German -->
+    <div data-lang="de">
+      <div class="hero">
+        <h2>Willkommen beim LucentX Support</h2>
+        <p>Verwandeln Sie Ihr iPhone oder iPad in ein professionelles Fülllicht für Fotografie, Videotelefonie, Make-up und Live-Streaming.</p>
+      </div>
+      <div class="contact-card">
+        <h2>Kontakt</h2>
+        <p>Bei Fragen, Feedback oder Fehlermeldungen schreiben Sie uns per E-Mail. Wir antworten in der Regel innerhalb von 1–2 Werktagen.</p>
+        <a class="email-link" href="mailto:support@lucentx.app">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          distaner@icloud.com
+        </a>
+      </div>
+      <section>
+        <h2>Häufig gestellte Fragen</h2>
+        <div class="faq-item">
+          <h3>Wie ändere ich die Lichtfarbe?</h3>
+          <p>Tippen Sie einmal auf den Bildschirm, um das Bedienfeld zu öffnen. Nutzen Sie Schieberegler, Schnellfarben oder ziehen Sie auf dem Bildschirm.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Wie nutze ich den Verlaufmodus?</h3>
+          <p>Öffnen Sie das Bedienfeld und wechseln Sie zu „Verlauf“. Wählen Sie eine Voreinstellung oder bearbeiten Sie Farbmarken.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Wie sperre ich die Farbe?</h3>
+          <p>Doppeltippen zum Sperren. Erneut doppeltippen oder das Schloss-Symbol antippen zum Entsperren.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Warum ändert sich die Bildschirmhelligkeit?</h3>
+          <p>LucentX kann die Helligkeit automatisch maximieren. Dies können Sie über das Sonnen-Symbol im Bedienfeld deaktivieren.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Sammelt die App meine Daten?</h3>
+          <p>Nein. LucentX funktioniert vollständig auf Ihrem Gerät. Es werden keine personenbezogenen Daten erhoben.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- French -->
+    <div data-lang="fr">
+      <div class="hero">
+        <h2>Bienvenue sur le support LucentX</h2>
+        <p>Transformez votre iPhone ou iPad en lumière d'appoint professionnelle pour la photo, les appels vidéo, le maquillage et le streaming.</p>
+      </div>
+      <div class="contact-card">
+        <h2>Nous contacter</h2>
+        <p>Pour toute question, suggestion ou signalement de bug, envoyez-nous un e-mail. Nous répondons généralement sous 1 à 2 jours ouvrés.</p>
+        <a class="email-link" href="mailto:support@lucentx.app">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          distaner@icloud.com
+        </a>
+      </div>
+      <section>
+        <h2>Questions fréquentes</h2>
+        <div class="faq-item">
+          <h3>Comment changer la couleur de la lumière ?</h3>
+          <p>Appuyez une fois sur l'écran pour ouvrir le panneau. Utilisez les curseurs, les couleurs rapides ou faites glisser sur l'écran.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Comment utiliser le mode dégradé ?</h3>
+          <p>Ouvrez le panneau et passez en mode « Dégradé ». Choisissez un préréglage ou modifiez les repères de couleur.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Comment verrouiller la couleur ?</h3>
+          <p>Double-appui pour verrouiller. Double-appui à nouveau ou touchez l'icône cadenas pour déverrouiller.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Pourquoi la luminosité de l'écran change-t-elle ?</h3>
+          <p>LucentX peut augmenter automatiquement la luminosité au maximum. Désactivez cette option via l'icône soleil du panneau.</p>
+        </div>
+        <div class="faq-item">
+          <h3>L'application collecte-t-elle mes données ?</h3>
+          <p>Non. LucentX fonctionne entièrement sur votre appareil, sans collecte de données personnelles ni compte requis.</p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p data-lang="en" class="visible">&copy; 2026 LucentX. All rights reserved.</p>
+      <p data-lang="zh">&copy; 2026 LucentX. 保留所有权利。</p>
+      <p data-lang="de">&copy; 2026 LucentX. Alle Rechte vorbehalten.</p>
+      <p data-lang="fr">&copy; 2026 LucentX. Tous droits réservés.</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var LANGS = ['en', 'zh', 'de', 'fr'];
+      var STORAGE_KEY = 'lucentx-support-lang';
+
+      function setLang(lang) {
+        if (LANGS.indexOf(lang) === -1) lang = 'en';
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+        document.querySelectorAll('[data-lang]').forEach(function (el) {
+          el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
+        });
+        document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+        });
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      }
+
+      document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setLang(btn.getAttribute('data-set-lang'));
+        });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      if (saved && LANGS.indexOf(saved) !== -1) {
+        setLang(saved);
+      } else {
+        var browser = (navigator.language || 'en').slice(0, 2);
+        setLang(LANGS.indexOf(browser) !== -1 ? browser : 'en');
+      }
+    })();
+  </script>
+</body>
+</html>
